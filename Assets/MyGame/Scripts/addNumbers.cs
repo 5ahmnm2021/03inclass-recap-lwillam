@@ -5,42 +5,59 @@ using UnityEngine.UI;
 
 public class addNumbers : MonoBehaviour
 {
-    public InputField num1_in;
-    public InputField num2_in;
-    public float num1;
-    public float num2;
+    public InputField input1;
+    public InputField input2;
+    
     public Text result;
-    bool correctIn1 = false;
-    public bool correctIn2 = false;
+    
+    bool num1 = true;
+    bool num2 = true;
+    
+    //bool correctIn1 = false;
+    //public bool correctIn2 = false;
 
     public void AddNumbersOnClick()
+
+    
     {
+        int ersteNummer = 0;
+        int zweiteNummer = 0;
+
+        int ergebnis = 0;
+
+        string fehlerTxt = "Geben sie eine gültige Zahl ein";
+
         try
         {
-            num1 = float.Parse(num1_in.text);
-            correctIn1 = true;
+            ersteNummer = int.Parse(input1.text);
+            input1.image.color = Color.white;
+            num1 = true;
         }
         catch (System.Exception)
         {
-            num1_in.image.color = new Color32(255,0,0,100);
-            correctIn1 = false;
+            input1.image.color = new Color32(255,0,0,100);
+            input1.text = fehlerTxt;
+            num1 = false;
         }
 
         try
         {
-            num2 = float.Parse(num2_in.text);
-            correctIn2 = true;
+            zweiteNummer = int.Parse(input2.text);
+            input2.image.color = Color.white;
+            num2 = true;
         }
         catch (System.Exception)
         {
-            num2_in.image.color = new Color32(255,0,0,100);
-            correctIn2 = false;
+            input2.image.color = new Color32(255,0,0,100);
+            input2.text = fehlerTxt;
+            num2 = false;
         }
         
-        if (correctIn1 == true | correctIn2 == true)
+        if (num1 && num2)
         {
-            float addResult = num1 + num2;
-            result.text = addResult.ToString();
+            ergebnis = ersteNummer + zweiteNummer;
+
+            result.text = ergebnis.ToString();
         }
         else
         {

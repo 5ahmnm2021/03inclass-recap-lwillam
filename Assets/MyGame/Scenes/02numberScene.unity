@@ -1283,12 +1283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf041d0a77214714b53f10e36fbaff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num1_in: {fileID: 2010833244}
-  num2_in: {fileID: 95952692}
-  num1: 0
-  num2: 0
+  input1: {fileID: 2010833244}
+  input2: {fileID: 95952692}
   result: {fileID: 1620037038}
-  correctIn2: 0
 --- !u!4 &1426769624
 Transform:
   m_ObjectHideFlags: 0
